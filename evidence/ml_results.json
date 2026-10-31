@@ -1,0 +1,806 @@
+{
+  "title": "CMS | Next-year inpatient claims ML",
+  "scope": "CMS DE-SynPUF Sample 1, synthetic data only. 73,757 eligible beneficiaries. Baseline features end 2008-12-31; target is at least one accepted claim ending in 2009. Full 2009 Part A, no HMO and survival through 2009 are required to interpret absence as zero.",
+  "validation": "Fixed seed, stratified beneficiary split: 60% training, 20% probability calibration, 20% locked test. Fixed hyperparameters; median imputation and scaling fitted on training only. Platt calibration uses calibration people only. No test-driven model selection. This is a held-out-person evaluation with forward-looking labels, not validation in a later calendar cohort.",
+  "limitations": "Synthetic relationships do not demonstrate performance on real patients or clinical usefulness. Eligibility depends on later enrollment and survival, so results apply to that retrospective complete-follow-up population. Labels include carry-in stays ending in 2009, not incident admissions or readmissions. Aggregate held-out errors have no external validation or confidence intervals; subgroup scores do not establish fairness.",
+  "primary_metric": "average_precision",
+  "source_population_n": 116352,
+  "n": 73757,
+  "features": [
+    "age",
+    "sex",
+    "part_a_2008",
+    "hmo_2008",
+    "claims_2008",
+    "payment_2008",
+    "days_2008",
+    "days_since_last_2008"
+  ],
+  "cohort_flow": [
+    {
+      "reason": "Died before prediction boundary",
+      "excluded": 1814,
+      "remaining": 114538
+    },
+    {
+      "reason": "Missing 2009, incomplete Part A, HMO or death during 2009",
+      "excluded": 40744,
+      "remaining": 73794
+    },
+    {
+      "reason": "Ambiguous baseline or target-year claim",
+      "excluded": 37,
+      "remaining": 73757
+    }
+  ],
+  "split": {
+    "train": {
+      "n": 44254,
+      "positives": 7738
+    },
+    "calibration": {
+      "n": 14751,
+      "positives": 2579
+    },
+    "test": {
+      "n": 14752,
+      "positives": 2580
+    }
+  },
+  "test_prevalence": 0.17489154013015185,
+  "scores": [
+    {
+      "model": "Training prevalence",
+      "ROC_AUC": 0.5,
+      "average_precision": 0.17489154013015185,
+      "Brier": 0.14430449071157458,
+      "log_loss": 0.4635582262982399
+    },
+    {
+      "model": "Logistic regression",
+      "ROC_AUC": 0.607520882849697,
+      "average_precision": 0.2659685752060373,
+      "Brier": 0.13926532956101795,
+      "log_loss": 0.4478393881576345
+    },
+    {
+      "model": "Logistic regression + calibration",
+      "ROC_AUC": 0.607521312734526,
+      "average_precision": 0.2659687206111975,
+      "Brier": 0.1392690182614498,
+      "log_loss": 0.447866460953184
+    },
+    {
+      "model": "Gradient boosting",
+      "ROC_AUC": 0.6154634031084176,
+      "average_precision": 0.2710810286509955,
+      "Brier": 0.13881055042497725,
+      "log_loss": 0.44647446814654634
+    },
+    {
+      "model": "Gradient boosting + calibration",
+      "ROC_AUC": 0.6154634031084176,
+      "average_precision": 0.2710810286509955,
+      "Brier": 0.13881691150849257,
+      "log_loss": 0.44648902405598523
+    }
+  ],
+  "calibration": [
+    {
+      "model": "Training prevalence",
+      "n": 14752,
+      "mean_probability": 0.1748542504632349,
+      "observed_rate": 0.17489154013015185
+    },
+    {
+      "model": "Logistic regression",
+      "n": 1476,
+      "mean_probability": 0.0914888748044576,
+      "observed_rate": 0.08062330623306233
+    },
+    {
+      "model": "Logistic regression",
+      "n": 1480,
+      "mean_probability": 0.15219941957399788,
+      "observed_rate": 0.1445945945945946
+    },
+    {
+      "model": "Logistic regression",
+      "n": 1475,
+      "mean_probability": 0.15519448869392616,
+      "observed_rate": 0.13830508474576272
+    },
+    {
+      "model": "Logistic regression",
+      "n": 1470,
+      "mean_probability": 0.15658618411882202,
+      "observed_rate": 0.16666666666666666
+    },
+    {
+      "model": "Logistic regression",
+      "n": 1487,
+      "mean_probability": 0.15888031796566673,
+      "observed_rate": 0.17753866845998656
+    },
+    {
+      "model": "Logistic regression",
+      "n": 1474,
+      "mean_probability": 0.16138344120735781,
+      "observed_rate": 0.15128900949796473
+    },
+    {
+      "model": "Logistic regression",
+      "n": 1478,
+      "mean_probability": 0.16256297286039795,
+      "observed_rate": 0.15696887686062247
+    },
+    {
+      "model": "Logistic regression",
+      "n": 1461,
+      "mean_probability": 0.16401150639136977,
+      "observed_rate": 0.16427104722792607
+    },
+    {
+      "model": "Logistic regression",
+      "n": 1475,
+      "mean_probability": 0.19071914363993706,
+      "observed_rate": 0.20813559322033898
+    },
+    {
+      "model": "Logistic regression",
+      "n": 1476,
+      "mean_probability": 0.3629180455153754,
+      "observed_rate": 0.3604336043360434
+    },
+    {
+      "model": "Logistic regression + calibration",
+      "n": 1476,
+      "mean_probability": 0.09313145151570303,
+      "observed_rate": 0.08062330623306233
+    },
+    {
+      "model": "Logistic regression + calibration",
+      "n": 1480,
+      "mean_probability": 0.15356002918733233,
+      "observed_rate": 0.1445945945945946
+    },
+    {
+      "model": "Logistic regression + calibration",
+      "n": 1475,
+      "mean_probability": 0.1565263855227983,
+      "observed_rate": 0.13830508474576272
+    },
+    {
+      "model": "Logistic regression + calibration",
+      "n": 1470,
+      "mean_probability": 0.1579042439005223,
+      "observed_rate": 0.16666666666666666
+    },
+    {
+      "model": "Logistic regression + calibration",
+      "n": 1487,
+      "mean_probability": 0.16017507930361305,
+      "observed_rate": 0.17753866845998656
+    },
+    {
+      "model": "Logistic regression + calibration",
+      "n": 1474,
+      "mean_probability": 0.16265227225632584,
+      "observed_rate": 0.15128900949796473
+    },
+    {
+      "model": "Logistic regression + calibration",
+      "n": 1478,
+      "mean_probability": 0.1638193360298464,
+      "observed_rate": 0.15696887686062247
+    },
+    {
+      "model": "Logistic regression + calibration",
+      "n": 1461,
+      "mean_probability": 0.16525236612464467,
+      "observed_rate": 0.16427104722792607
+    },
+    {
+      "model": "Logistic regression + calibration",
+      "n": 1475,
+      "mean_probability": 0.19159729194059896,
+      "observed_rate": 0.20813559322033898
+    },
+    {
+      "model": "Logistic regression + calibration",
+      "n": 1476,
+      "mean_probability": 0.3608783637918571,
+      "observed_rate": 0.3604336043360434
+    },
+    {
+      "model": "Gradient boosting",
+      "n": 1477,
+      "mean_probability": 0.08284527795484185,
+      "observed_rate": 0.07921462423832092
+    },
+    {
+      "model": "Gradient boosting",
+      "n": 1488,
+      "mean_probability": 0.1354797688122032,
+      "observed_rate": 0.1431451612903226
+    },
+    {
+      "model": "Gradient boosting",
+      "n": 1537,
+      "mean_probability": 0.14792185464105742,
+      "observed_rate": 0.1346779440468445
+    },
+    {
+      "model": "Gradient boosting",
+      "n": 1690,
+      "mean_probability": 0.1537365740500054,
+      "observed_rate": 0.13846153846153847
+    },
+    {
+      "model": "Gradient boosting",
+      "n": 1203,
+      "mean_probability": 0.1565927518594191,
+      "observed_rate": 0.18038237738985868
+    },
+    {
+      "model": "Gradient boosting",
+      "n": 1473,
+      "mean_probability": 0.16125389215590621,
+      "observed_rate": 0.17243720298710116
+    },
+    {
+      "model": "Gradient boosting",
+      "n": 1541,
+      "mean_probability": 0.1662305103150401,
+      "observed_rate": 0.16937053861129137
+    },
+    {
+      "model": "Gradient boosting",
+      "n": 1813,
+      "mean_probability": 0.17414122237396334,
+      "observed_rate": 0.16657473800330944
+    },
+    {
+      "model": "Gradient boosting",
+      "n": 1055,
+      "mean_probability": 0.2254717031517354,
+      "observed_rate": 0.22180094786729856
+    },
+    {
+      "model": "Gradient boosting",
+      "n": 1475,
+      "mean_probability": 0.3681731629090743,
+      "observed_rate": 0.36677966101694914
+    },
+    {
+      "model": "Gradient boosting + calibration",
+      "n": 1477,
+      "mean_probability": 0.0829648562879598,
+      "observed_rate": 0.07921462423832092
+    },
+    {
+      "model": "Gradient boosting + calibration",
+      "n": 1488,
+      "mean_probability": 0.1361897826098297,
+      "observed_rate": 0.1431451612903226
+    },
+    {
+      "model": "Gradient boosting + calibration",
+      "n": 1537,
+      "mean_probability": 0.14879348440611417,
+      "observed_rate": 0.1346779440468445
+    },
+    {
+      "model": "Gradient boosting + calibration",
+      "n": 1690,
+      "mean_probability": 0.15468577926604807,
+      "observed_rate": 0.13846153846153847
+    },
+    {
+      "model": "Gradient boosting + calibration",
+      "n": 1203,
+      "mean_probability": 0.157580468027719,
+      "observed_rate": 0.18038237738985868
+    },
+    {
+      "model": "Gradient boosting + calibration",
+      "n": 1473,
+      "mean_probability": 0.16230492048619782,
+      "observed_rate": 0.17243720298710116
+    },
+    {
+      "model": "Gradient boosting + calibration",
+      "n": 1541,
+      "mean_probability": 0.16734980016522794,
+      "observed_rate": 0.16937053861129137
+    },
+    {
+      "model": "Gradient boosting + calibration",
+      "n": 1813,
+      "mean_probability": 0.17537026489348473,
+      "observed_rate": 0.16657473800330944
+    },
+    {
+      "model": "Gradient boosting + calibration",
+      "n": 1055,
+      "mean_probability": 0.2274389756154259,
+      "observed_rate": 0.22180094786729856
+    },
+    {
+      "model": "Gradient boosting + calibration",
+      "n": 1475,
+      "mean_probability": 0.37207889633700897,
+      "observed_rate": 0.36677966101694914
+    }
+  ],
+  "subgroups": [
+    {
+      "variable": "sex",
+      "group": "1.0",
+      "model": "Training prevalence",
+      "n": 6597,
+      "positives": 1114,
+      "ROC_AUC": 0.5,
+      "average_precision": 0.16886463544035168,
+      "Brier": 0.14038524582607115,
+      "log_loss": 0.45420683719955174
+    },
+    {
+      "variable": "sex",
+      "group": "2.0",
+      "model": "Training prevalence",
+      "n": 8155,
+      "positives": 1466,
+      "ROC_AUC": 0.5,
+      "average_precision": 0.17976701410177806,
+      "Brier": 0.1474749699892774,
+      "log_loss": 0.4711230471301277
+    },
+    {
+      "variable": "prior_claim",
+      "group": "no",
+      "model": "Training prevalence",
+      "n": 12622,
+      "positives": 1873,
+      "ROC_AUC": 0.5,
+      "average_precision": 0.14839169703691965,
+      "Brier": 0.1270718680212633,
+      "log_loss": 0.4224408772486711
+    },
+    {
+      "variable": "prior_claim",
+      "group": "yes",
+      "model": "Training prevalence",
+      "n": 2130,
+      "positives": 707,
+      "ROC_AUC": 0.5,
+      "average_precision": 0.33192488262910796,
+      "Brier": 0.24642193840974785,
+      "log_loss": 0.7072123012764828
+    },
+    {
+      "variable": "age",
+      "group": "65-74",
+      "model": "Training prevalence",
+      "n": 5826,
+      "positives": 869,
+      "ROC_AUC": 0.5,
+      "average_precision": 0.14915894267078614,
+      "Brier": 0.12757080133466794,
+      "log_loss": 0.4236313411477763
+    },
+    {
+      "variable": "age",
+      "group": "75-84",
+      "model": "Training prevalence",
+      "n": 4463,
+      "positives": 877,
+      "ROC_AUC": 0.5,
+      "average_precision": 0.19650459332287698,
+      "Brier": 0.15835927547182774,
+      "log_loss": 0.4970931966384656
+    },
+    {
+      "variable": "age",
+      "group": "85+",
+      "model": "Training prevalence",
+      "n": 2296,
+      "positives": 451,
+      "ROC_AUC": 0.5,
+      "average_precision": 0.19642857142857142,
+      "Brier": 0.15830983908021737,
+      "log_loss": 0.49697524051500575
+    },
+    {
+      "variable": "age",
+      "group": "<65",
+      "model": "Training prevalence",
+      "n": 2167,
+      "positives": 383,
+      "ROC_AUC": 0.5,
+      "average_precision": 0.1767420396862021,
+      "Brier": 0.14550785484191342,
+      "log_loss": 0.4664294748522218
+    },
+    {
+      "variable": "sex",
+      "group": "1.0",
+      "model": "Logistic regression",
+      "n": 6597,
+      "positives": 1114,
+      "ROC_AUC": 0.619085808231809,
+      "average_precision": 0.27037881784625406,
+      "Brier": 0.13492337762013706,
+      "log_loss": 0.4370250383463005
+    },
+    {
+      "variable": "sex",
+      "group": "2.0",
+      "model": "Logistic regression",
+      "n": 8155,
+      "positives": 1466,
+      "ROC_AUC": 0.5948429004308962,
+      "average_precision": 0.2645411209796037,
+      "Brier": 0.14277775837205303,
+      "log_loss": 0.456587673345295
+    },
+    {
+      "variable": "prior_claim",
+      "group": "no",
+      "model": "Logistic regression",
+      "n": 12622,
+      "positives": 1873,
+      "ROC_AUC": 0.5431227737595576,
+      "average_precision": 0.161266506148955,
+      "Brier": 0.12570202522382826,
+      "log_loss": 0.4168347496830136
+    },
+    {
+      "variable": "prior_claim",
+      "group": "yes",
+      "model": "Logistic regression",
+      "n": 2130,
+      "positives": 707,
+      "ROC_AUC": 0.5722495952034717,
+      "average_precision": 0.3914673207823298,
+      "Brier": 0.21963905131876824,
+      "log_loss": 0.6315673444142851
+    },
+    {
+      "variable": "age",
+      "group": "65-74",
+      "model": "Logistic regression",
+      "n": 5826,
+      "positives": 869,
+      "ROC_AUC": 0.5871674768950836,
+      "average_precision": 0.21298398364212429,
+      "Brier": 0.1247287123352297,
+      "log_loss": 0.4129243227313035
+    },
+    {
+      "variable": "age",
+      "group": "75-84",
+      "model": "Logistic regression",
+      "n": 4463,
+      "positives": 877,
+      "ROC_AUC": 0.5900052529124729,
+      "average_precision": 0.28743136590620083,
+      "Brier": 0.15284915453097275,
+      "log_loss": 0.48150325564697033
+    },
+    {
+      "variable": "age",
+      "group": "85+",
+      "model": "Logistic regression",
+      "n": 2296,
+      "positives": 451,
+      "ROC_AUC": 0.6274860442617729,
+      "average_precision": 0.3152921008794122,
+      "Brier": 0.149814379898728,
+      "log_loss": 0.47227498361157383
+    },
+    {
+      "variable": "age",
+      "group": "<65",
+      "model": "Logistic regression",
+      "n": 2167,
+      "positives": 383,
+      "ROC_AUC": 0.6328438747672963,
+      "average_precision": 0.28875014201633653,
+      "Brier": 0.13919384896164175,
+      "log_loss": 0.4464869208787488
+    },
+    {
+      "variable": "sex",
+      "group": "1.0",
+      "model": "Logistic regression + calibration",
+      "n": 6597,
+      "positives": 1114,
+      "ROC_AUC": 0.619085808231809,
+      "average_precision": 0.27037881784625406,
+      "Brier": 0.1349369542904853,
+      "log_loss": 0.43708552122527705
+    },
+    {
+      "variable": "sex",
+      "group": "2.0",
+      "model": "Logistic regression + calibration",
+      "n": 8155,
+      "positives": 1466,
+      "ROC_AUC": 0.594844277128645,
+      "average_precision": 0.2645414282276601,
+      "Brier": 0.1427734481837616,
+      "log_loss": 0.45658771900162076
+    },
+    {
+      "variable": "prior_claim",
+      "group": "no",
+      "model": "Logistic regression + calibration",
+      "n": 12622,
+      "positives": 1873,
+      "ROC_AUC": 0.5431234443045572,
+      "average_precision": 0.16126683064400343,
+      "Brier": 0.12571254160940187,
+      "log_loss": 0.41688440383208847
+    },
+    {
+      "variable": "prior_claim",
+      "group": "yes",
+      "model": "Logistic regression + calibration",
+      "n": 2130,
+      "positives": 707,
+      "ROC_AUC": 0.5722495952034717,
+      "average_precision": 0.3914673207823298,
+      "Brier": 0.2196022803751347,
+      "log_loss": 0.631460604137441
+    },
+    {
+      "variable": "age",
+      "group": "65-74",
+      "model": "Logistic regression + calibration",
+      "n": 5826,
+      "positives": 869,
+      "ROC_AUC": 0.5871706108668031,
+      "average_precision": 0.21298554773941653,
+      "Brier": 0.12474655384995453,
+      "log_loss": 0.41304432181976125
+    },
+    {
+      "variable": "age",
+      "group": "75-84",
+      "model": "Logistic regression + calibration",
+      "n": 4463,
+      "positives": 877,
+      "ROC_AUC": 0.5900052529124729,
+      "average_precision": 0.28743136590620083,
+      "Brier": 0.1528279828634551,
+      "log_loss": 0.4814002253217567
+    },
+    {
+      "variable": "age",
+      "group": "85+",
+      "model": "Logistic regression + calibration",
+      "n": 2296,
+      "positives": 451,
+      "ROC_AUC": 0.6274860442617729,
+      "average_precision": 0.3152921008794122,
+      "Brier": 0.14983519848749577,
+      "log_loss": 0.4723389672397332
+    },
+    {
+      "variable": "age",
+      "group": "<65",
+      "model": "Logistic regression + calibration",
+      "n": 2167,
+      "positives": 383,
+      "ROC_AUC": 0.6328438747672963,
+      "average_precision": 0.28875014201633653,
+      "Brier": 0.13919253872458776,
+      "log_loss": 0.446493003537616
+    },
+    {
+      "variable": "sex",
+      "group": "1.0",
+      "model": "Gradient boosting",
+      "n": 6597,
+      "positives": 1114,
+      "ROC_AUC": 0.6239833518389302,
+      "average_precision": 0.26975244296172246,
+      "Brier": 0.13442802294509607,
+      "log_loss": 0.43524268543024003
+    },
+    {
+      "variable": "sex",
+      "group": "2.0",
+      "model": "Gradient boosting",
+      "n": 8155,
+      "positives": 1466,
+      "ROC_AUC": 0.6044442454747944,
+      "average_precision": 0.27035424458194157,
+      "Brier": 0.14235580288172475,
+      "log_loss": 0.4555604363353229
+    },
+    {
+      "variable": "prior_claim",
+      "group": "no",
+      "model": "Gradient boosting",
+      "n": 12622,
+      "positives": 1873,
+      "ROC_AUC": 0.5525294770340077,
+      "average_precision": 0.1655614859401121,
+      "Brier": 0.12561402000221705,
+      "log_loss": 0.4164629032257482
+    },
+    {
+      "variable": "prior_claim",
+      "group": "yes",
+      "model": "Gradient boosting",
+      "n": 2130,
+      "positives": 707,
+      "ROC_AUC": 0.5844764880061945,
+      "average_precision": 0.40254335996721585,
+      "Brier": 0.21701083539966223,
+      "log_loss": 0.6243176476912947
+    },
+    {
+      "variable": "age",
+      "group": "65-74",
+      "model": "Gradient boosting",
+      "n": 5826,
+      "positives": 869,
+      "ROC_AUC": 0.5873540062489075,
+      "average_precision": 0.2189754383366702,
+      "Brier": 0.12395323212310089,
+      "log_loss": 0.41074409618541186
+    },
+    {
+      "variable": "age",
+      "group": "75-84",
+      "model": "Gradient boosting",
+      "n": 4463,
+      "positives": 877,
+      "ROC_AUC": 0.5797272555567357,
+      "average_precision": 0.28658171424740775,
+      "Brier": 0.15230254487984676,
+      "log_loss": 0.4801787484153657
+    },
+    {
+      "variable": "age",
+      "group": "85+",
+      "model": "Gradient boosting",
+      "n": 2296,
+      "positives": 451,
+      "ROC_AUC": 0.6431663451889508,
+      "average_precision": 0.31154986936312773,
+      "Brier": 0.14928378101793152,
+      "log_loss": 0.4705423296239141
+    },
+    {
+      "variable": "age",
+      "group": "<65",
+      "model": "Gradient boosting",
+      "n": 2167,
+      "positives": 383,
+      "ROC_AUC": 0.6273636267840625,
+      "average_precision": 0.2786904094018477,
+      "Brier": 0.13987073858059593,
+      "log_loss": 0.44762035381973186
+    },
+    {
+      "variable": "sex",
+      "group": "1.0",
+      "model": "Gradient boosting + calibration",
+      "n": 6597,
+      "positives": 1114,
+      "ROC_AUC": 0.6239833518389302,
+      "average_precision": 0.26975244296172246,
+      "Brier": 0.1344331936088061,
+      "log_loss": 0.4352609238536876
+    },
+    {
+      "variable": "sex",
+      "group": "2.0",
+      "model": "Gradient boosting + calibration",
+      "n": 8155,
+      "positives": 1466,
+      "ROC_AUC": 0.6044442454747944,
+      "average_precision": 0.27035424458194157,
+      "Brier": 0.14236312695720274,
+      "log_loss": 0.4555720132692971
+    },
+    {
+      "variable": "prior_claim",
+      "group": "no",
+      "model": "Gradient boosting + calibration",
+      "n": 12622,
+      "positives": 1873,
+      "ROC_AUC": 0.5525294770340077,
+      "average_precision": 0.1655614859401121,
+      "Brier": 0.12561648822376742,
+      "log_loss": 0.4164711021950824
+    },
+    {
+      "variable": "prior_claim",
+      "group": "yes",
+      "model": "Gradient boosting + calibration",
+      "n": 2130,
+      "positives": 707,
+      "ROC_AUC": 0.5844764880061945,
+      "average_precision": 0.40254335996721585,
+      "Brier": 0.21704026488868083,
+      "log_loss": 0.6243698736936927
+    },
+    {
+      "variable": "age",
+      "group": "65-74",
+      "model": "Gradient boosting + calibration",
+      "n": 5826,
+      "positives": 869,
+      "ROC_AUC": 0.5873540062489075,
+      "average_precision": 0.2189754383366702,
+      "Brier": 0.12398544358878597,
+      "log_loss": 0.4108291308408562
+    },
+    {
+      "variable": "age",
+      "group": "75-84",
+      "model": "Gradient boosting + calibration",
+      "n": 4463,
+      "positives": 877,
+      "ROC_AUC": 0.5797272555567357,
+      "average_precision": 0.28658171424740775,
+      "Brier": 0.1522475691193335,
+      "log_loss": 0.4800312823171419
+    },
+    {
+      "variable": "age",
+      "group": "85+",
+      "model": "Gradient boosting + calibration",
+      "n": 2296,
+      "positives": 451,
+      "ROC_AUC": 0.6431663451889508,
+      "average_precision": 0.31154986936312773,
+      "Brier": 0.14927471310239784,
+      "log_loss": 0.4705539225955811
+    },
+    {
+      "variable": "age",
+      "group": "<65",
+      "model": "Gradient boosting + calibration",
+      "n": 2167,
+      "positives": 383,
+      "ROC_AUC": 0.6273636267840625,
+      "average_precision": 0.2786904094018477,
+      "Brier": 0.1399502731713542,
+      "log_loss": 0.4477822553457351
+    }
+  ],
+  "permutation_importance": {
+    "metric": "increase in calibration-split log loss",
+    "features_by_model": {
+      "Logistic regression": {
+        "age": 6.009568708666979e-05,
+        "sex": 9.643617217316435e-05,
+        "part_a_2008": 0.0034402532359431694,
+        "hmo_2008": 0.0011083191815043137,
+        "claims_2008": 1.2245950816791585e-05,
+        "payment_2008": 1.3296555974040557e-07,
+        "days_2008": 0.00025159067687761103,
+        "days_since_last_2008": 0.01750966059263718
+      },
+      "Gradient boosting": {
+        "age": 0.0015914412651248933,
+        "sex": 0.00029380844840464214,
+        "part_a_2008": 0.003777455972452459,
+        "hmo_2008": 0.0012930933797056122,
+        "claims_2008": 0.007615262342542994,
+        "payment_2008": 0.00027043066049121657,
+        "days_2008": 0.001971893954394921,
+        "days_since_last_2008": 0.005600284444279258
+      }
+    },
+    "repeats": 5,
+    "used_for_selection": false
+  },
+  "seed": 20261031
+}

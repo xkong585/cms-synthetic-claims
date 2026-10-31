@@ -1,7 +1,7 @@
 {
   "status": "passed",
   "mode": "empty raw/processed directories; official source downloads; full pipeline and tests",
-  "elapsed_seconds": 14.381,
+  "elapsed_seconds": 18.017,
   "tables": [
     {
       "table": "summary_tables.csv",
@@ -42,26 +42,35 @@
       "table": "payment_distribution.csv",
       "identical": true,
       "sha256": "efc981f668cf9ca01977ca36175a8d6837438c6f4b16dd32e0978f0196fe36ce"
+    },
+    {
+      "table": "ml_results.json",
+      "identical": true,
+      "sha256": "a7b2fddd494ff6e5ed7004698c4d563934bd63cb93e3b8955e16fdfd8f7b2c4d"
     }
   ],
   "clean_run_log": {
-    "started_at_utc": "2026-10-31T21:36:20.586561+00:00",
+    "started_at_utc": "2026-10-31T23:22:08.207792+00:00",
     "status": "passed",
     "steps": [
       {
         "stage": "download_verify",
-        "seconds": 2.456
+        "seconds": 3.37
       },
       {
         "stage": "typed_staging_claim_resolution_annual_ledger",
-        "seconds": 3.423
+        "seconds": 3.474
       },
       {
         "stage": "independent_SQL_and_descriptives",
         "seconds": 0.505
+      },
+      {
+        "stage": "ML_benchmarks",
+        "seconds": 1.823
       }
     ],
-    "elapsed_seconds": 13.996,
+    "elapsed_seconds": 17.598,
     "environment": {
       "python": "3.12.14",
       "platform": "macOS-26.6-arm64-arm-64bit",
@@ -72,10 +81,13 @@
         "duckdb": "1.4.1",
         "matplotlib": "3.10.7",
         "reportlab": "4.4.4",
-        "pytest": "8.4.2"
+        "pytest": "8.4.2",
+        "scikit-learn": "1.7.2",
+        "joblib": "1.6.0",
+        "threadpoolctl": "3.7.0"
       }
     },
-    "source_lock_sha256": "8ce4a809bfa7d82a480e5d12c7bcd6408f72153a3301a25ca0d8708181d017e9",
+    "source_lock_sha256": "04203f90f1f4ff8f6059a82172fd8b3d7936d4bb0dc7602672c4b9288d4bbbd0",
     "scope_sha256": "df2f56d41cf7325ecbccb360ecea0276848925045df48c3b52fd03422cba4697"
   }
 }

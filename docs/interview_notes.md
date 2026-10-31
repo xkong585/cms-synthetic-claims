@@ -21,3 +21,9 @@ reimbursement for all paired nonambiguous people; payment-only totals do not.
 These are synthetic-data demonstrations. They do not show real Medicare costs,
 clinical outcomes or hospital quality. I can explain every denominator and show
 the source lock, exception policy, complete-case exclusions and clean-run evidence.
+
+## ML interview discussion
+
+Added a 2008-feature / 2009-claim benchmark for 73,757 synthetic beneficiaries with complete follow-up. Held-out test average precision: prevalence baseline 0.1749, logistic 0.2660, gradient boosting 0.2711; gradient boosting ROC-AUC 0.6155 and Brier 0.1388 versus baseline 0.1443. Calibration did not improve Brier on this test. Keep the raw and calibrated results visible; do not claim clinical or real-world validity.
+
+Explain: (1) why the split matches the data unit; (2) how future features are excluded; (3) why a baseline is mandatory; (4) why calibration can fail to improve performance; (5) why permutation importance is not a causal coefficient.

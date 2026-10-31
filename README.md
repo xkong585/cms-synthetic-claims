@@ -164,3 +164,9 @@ beneficiary file for that year, review the source lock, annual date and age
 reference, update the schema/scope and SQL boundaries, re-audit segment conflicts,
 then regenerate all outputs/tests. Do not attach three-year claims to 2008
 attributes and relabel the result as another year. No weights from NHANES apply.
+
+## Machine learning supplement
+
+Added a 2008-feature / 2009-claim benchmark for 73,757 synthetic beneficiaries with complete follow-up. Held-out test average precision: prevalence baseline 0.1749, logistic 0.2660, gradient boosting 0.2711; gradient boosting ROC-AUC 0.6155 and Brier 0.1388 versus baseline 0.1443. Calibration did not improve Brier on this test. Keep the raw and calibrated results visible; do not claim clinical or real-world validity.
+
+Open [ML report](reports/ml_report.html), [one-page brief](reports/ml_brief.pdf), [frozen protocol](docs/ml_plan.md), [model card](docs/ml_model_card.md), and [aggregate evidence](evidence/ml_results.json). The existing `bash run_all.sh` now reproduces the ML module too. No additional credentials or service are required. Individual predictions stay under ignored `data/processed/`.
