@@ -1,0 +1,8 @@
+metric,numerator,denominator,time_rule,unit
+full_ledger_beneficiaries,source beneficiary rows,all source 2008 people,2008 source table,people
+main_claimant_fraction,people with >=1 accepted claim,nonambiguous beneficiaries in selected coverage/age domain,CLM_THRU_DT in 2008,fraction
+claims_per_beneficiary,accepted claims of eligible people,all eligible people including true zeros,CLM_THRU_DT in 2008,claims/person
+mean_payment,complete synthetic claim-payment total,people with complete totals in eligible domain including true zeros,CLM_THRU_DT in 2008,USD/person
+known_payment_sum,sum of known invariant accepted claim cents,accepted claims; partial sum if missing present,CLM_THRU_DT in 2008,cents
+expanded_reimbursement,payment cents + covered days * pass-through cents,complete nonambiguous paired beneficiaries,CLM_THRU_DT in 2008,cents
+full_coverage_sensitivity,same numerators as main,nonambiguous people with Part A 12 months,2008,same as corresponding metric

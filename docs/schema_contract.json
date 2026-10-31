@@ -1,0 +1,14 @@
+{
+  "sample":1,"year":2008,"annual_date":"CLM_THRU_DT","age_reference":"2008-12-31",
+  "age_groups":["<65","65-74","75-84","85+","Unknown"],
+  "beneficiary_required":["DESYNPUF_ID","BENE_BIRTH_DT","BENE_DEATH_DT","BENE_SEX_IDENT_CD","BENE_HI_CVRAGE_TOT_MONS","MEDREIMB_IP"],
+  "inpatient_required":["DESYNPUF_ID","CLM_ID","SEGMENT","CLM_FROM_DT","CLM_THRU_DT","CLM_ADMSN_DT","NCH_BENE_DSCHRG_DT","CLM_PMT_AMT","CLM_UTLZTN_DAY_CNT","CLM_PASS_THRU_PER_DIEM_AMT"],
+  "blocking":["duplicate beneficiary key","missing identifier","claim ID across beneficiaries","duplicate segment key","segment outside 1-2","invalid nonblank date","invalid nonblank money","noninteger coverage or outside 0-12","unmatched annual claim","failed reconciliation"],
+  "claim_quarantine":["conflicting nonmissing claim fields","missing claim from or thru date at claim grain","reversed billing or admission/discharge dates"],
+  "money":"exact integer USD cents; negatives preserved; missing never zero",
+  "missing_segment_field":"one unique nonmissing value may be carried to claim level only after conflict checks",
+  "ambiguous_claim_year":"use unique nonmissing CLM_THRU_DT solely to assign quarantine impact; unknown/multiple year affects all beneficiaries in question",
+  "affected_beneficiary":"keep ledger row; nullable complete claim count/payment; excluded from complete-analysis domain; never a true zero",
+  "true_zero":"no accepted and no potentially qualifying quarantined claim",
+  "source_policy":"SHA256 pinned official inputs; raw and row-level derivatives excluded from Git"
+}

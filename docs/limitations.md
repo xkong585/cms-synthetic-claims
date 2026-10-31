@@ -1,0 +1,3 @@
+# Synthetic data and interpretation limits
+
+Fully synthetic data for software development and training, not real patient records or reliable Medicare population inference. Claim counts are not hospitalization episodes. The annual rule is claim-through date, not admission or payment year. Partial coverage and death can limit observation; counts per beneficiary are not full-year incidence rates. Conflicting claims are quarantined and affected beneficiaries excluded from complete-analysis summaries; exclusions can change the descriptive distributions. Synthetic dates, covered days and amounts must not be altered to make medical patterns look realistic. No hospital ranking, causal conclusion, cost saving or clinical recommendation is supported.

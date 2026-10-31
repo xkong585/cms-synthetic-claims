@@ -1,0 +1,7 @@
+status,claim_year,claims,known_payment_cents,missing_or_conflicting_payment_claims,cross_year
+accepted,2008,27475,25456098000,0,224
+accepted,2009,25261,24540837000,0,406
+accepted,2010,13902,13680913000,0,343
+quarantined,2008,21,500000,20,0
+quarantined,2009,32,9100000,26,0
+quarantined,2010,14,1700000,12,1

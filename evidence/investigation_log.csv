@@ -1,0 +1,8 @@
+item,n,resolution
+quarantined_claims,67,Retain local conflict rows; flag affected 2008 beneficiaries; never sum conflicting payments
+affected_2008_beneficiaries,21,Retain full ledger rows with null complete counts/totals; exclude from main complete-analysis domain
+annual_missing_payment_claims,0,Retain missing and separate known sum; do not zero-fill
+annual_negative_payment_claims,22,Preserve negative payment; official codebook permits negative amounts
+claims_crossing_calendar_year,224,Assign by thru date; no proration or admission-year relabeling
+partial_Part_A_coverage,12050,Report all-coverage and 12-month domains separately; no full-year incidence claim
+source_reimbursement_mismatch_after_formula,0,Retain comparison; investigate synthesis/year definitions; not a fatal accounting equality

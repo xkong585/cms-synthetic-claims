@@ -1,0 +1,42 @@
+[
+  {
+    "file": "beneficiary_2008_sample1.zip",
+    "url": "https://www.cms.gov/research-statistics-data-and-systems/downloadable-public-use-files/synpufs/downloads/de1_0_2008_beneficiary_summary_file_sample_1.zip",
+    "resolved_url": "https://www.cms.gov/research-statistics-data-and-systems/downloadable-public-use-files/synpufs/downloads/de1_0_2008_beneficiary_summary_file_sample_1.zip",
+    "bytes": 3119160,
+    "sha256": "2b0c9cbfb07a6eb46d5f96472c0891275a390b686c3fa34daae8d3e53d70b18b",
+    "obtained_at_utc": "2026-10-31T21:30:29.510783+00:00",
+    "sample": 1,
+    "source": "CMS official DE-SynPUF"
+  },
+  {
+    "file": "inpatient_2008_2010_sample1.zip",
+    "url": "https://www.cms.gov/research-statistics-data-and-systems/downloadable-public-use-files/synpufs/downloads/de1_0_2008_to_2010_inpatient_claims_sample_1.zip",
+    "resolved_url": "https://www.cms.gov/research-statistics-data-and-systems/downloadable-public-use-files/synpufs/downloads/de1_0_2008_to_2010_inpatient_claims_sample_1.zip",
+    "bytes": 4162147,
+    "sha256": "ac25124184d22863aff538607097d2d0c880d19f7d58f882f9d31129c492d893",
+    "obtained_at_utc": "2026-10-31T21:30:29.097657+00:00",
+    "sample": 1,
+    "source": "CMS official DE-SynPUF"
+  },
+  {
+    "file": "codebook.pdf",
+    "url": "https://www.cms.gov/files/document/cms08-10desynpufcodebookpdf",
+    "resolved_url": "https://www.cms.gov/files/document/cms08-10desynpufcodebookpdf",
+    "bytes": 820871,
+    "sha256": "3d81fa7a1d9b513485de00b91a1f7070e8372b9090dbadf792a52d12f2542b66",
+    "obtained_at_utc": "2026-10-31T21:30:28.589935+00:00",
+    "sample": 1,
+    "source": "CMS official DE-SynPUF"
+  },
+  {
+    "file": "user_manual.pdf",
+    "url": "https://www.cms.gov/research-statistics-data-and-systems/downloadable-public-use-files/synpufs/downloads/synpuf_dug.pdf",
+    "resolved_url": "https://www.cms.gov/research-statistics-data-and-systems/downloadable-public-use-files/synpufs/downloads/synpuf_dug.pdf",
+    "bytes": 1012165,
+    "sha256": "892b16f82b1dbdd79fe8fe36049c4c0c9bbc69e725b8ec6b9a856742bc2e2737",
+    "obtained_at_utc": "2026-10-31T21:30:28.719767+00:00",
+    "sample": 1,
+    "source": "CMS official DE-SynPUF"
+  }
+]

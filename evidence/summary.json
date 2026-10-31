@@ -1,0 +1,486 @@
+{
+  "build": {
+    "raw_beneficiaries": 116352,
+    "raw_segments": 66773,
+    "distinct_claims": 66705,
+    "multi_segment_claims": 68,
+    "quarantined_claims": 67,
+    "quarantined_2008": 21,
+    "accepted_claims_2008": 27475,
+    "eligible_beneficiaries": 116331,
+    "affected_beneficiaries": 21,
+    "zero_claim_beneficiaries": 100607,
+    "parse_errors": 0
+  },
+  "summaries": [
+    {
+      "scope": "All coverage",
+      "age_group": "All ages",
+      "ledger_beneficiaries": 116352,
+      "excluded_ambiguous_beneficiaries": 21,
+      "analysis_beneficiaries": 116331,
+      "claimants": 15724,
+      "claimant_fraction": 0.13516603484883652,
+      "accepted_claims": 27449,
+      "claims_per_beneficiary": 0.23595602204055668,
+      "payment_complete_beneficiaries": 116331,
+      "payment_missing_beneficiaries": 0,
+      "payment_mean_USD": 2185.6597123724546,
+      "payment_median_USD": 0.0,
+      "payment_p75_USD": 0.0,
+      "payment_p90_USD": 6000.0,
+      "payment_p95_USD": 14000.0,
+      "known_payment_cents": 25425998000,
+      "denominator": "Nonambiguous beneficiaries in selected domain; complete-payment subset for amount quantiles; true zero-claim people retained"
+    },
+    {
+      "scope": "All coverage",
+      "age_group": "<65",
+      "ledger_beneficiaries": 19120,
+      "excluded_ambiguous_beneficiaries": 3,
+      "analysis_beneficiaries": 19117,
+      "claimants": 2666,
+      "claimant_fraction": 0.13945702777632474,
+      "accepted_claims": 4830,
+      "claims_per_beneficiary": 0.2526547052361772,
+      "payment_complete_beneficiaries": 19117,
+      "payment_missing_beneficiaries": 0,
+      "payment_mean_USD": 2250.8327666474866,
+      "payment_median_USD": 0.0,
+      "payment_p75_USD": 0.0,
+      "payment_p90_USD": 6000.0,
+      "payment_p95_USD": 14000.0,
+      "known_payment_cents": 4302917000,
+      "denominator": "Nonambiguous beneficiaries in selected domain; complete-payment subset for amount quantiles; true zero-claim people retained"
+    },
+    {
+      "scope": "All coverage",
+      "age_group": "65-74",
+      "ledger_beneficiaries": 49547,
+      "excluded_ambiguous_beneficiaries": 9,
+      "analysis_beneficiaries": 49538,
+      "claimants": 5038,
+      "claimant_fraction": 0.10169970527675724,
+      "accepted_claims": 8479,
+      "claims_per_beneficiary": 0.17116153256086236,
+      "payment_complete_beneficiaries": 49538,
+      "payment_missing_beneficiaries": 0,
+      "payment_mean_USD": 1630.021801445355,
+      "payment_median_USD": 0.0,
+      "payment_p75_USD": 0.0,
+      "payment_p90_USD": 0.0,
+      "payment_p95_USD": 10000.0,
+      "known_payment_cents": 8074802000,
+      "denominator": "Nonambiguous beneficiaries in selected domain; complete-payment subset for amount quantiles; true zero-claim people retained"
+    },
+    {
+      "scope": "All coverage",
+      "age_group": "75-84",
+      "ledger_beneficiaries": 32882,
+      "excluded_ambiguous_beneficiaries": 5,
+      "analysis_beneficiaries": 32877,
+      "claimants": 5019,
+      "claimant_fraction": 0.15265991422575054,
+      "accepted_claims": 8736,
+      "claims_per_beneficiary": 0.265717674970344,
+      "payment_complete_beneficiaries": 32877,
+      "payment_missing_beneficiaries": 0,
+      "payment_mean_USD": 2525.0512516348817,
+      "payment_median_USD": 0.0,
+      "payment_p75_USD": 0.0,
+      "payment_p90_USD": 7000.0,
+      "payment_p95_USD": 16000.0,
+      "known_payment_cents": 8301611000,
+      "denominator": "Nonambiguous beneficiaries in selected domain; complete-payment subset for amount quantiles; true zero-claim people retained"
+    },
+    {
+      "scope": "All coverage",
+      "age_group": "85+",
+      "ledger_beneficiaries": 14803,
+      "excluded_ambiguous_beneficiaries": 4,
+      "analysis_beneficiaries": 14799,
+      "claimants": 3001,
+      "claimant_fraction": 0.20278397188999256,
+      "accepted_claims": 5404,
+      "claims_per_beneficiary": 0.36515980809514154,
+      "payment_complete_beneficiaries": 14799,
+      "payment_missing_beneficiaries": 0,
+      "payment_mean_USD": 3207.424826001757,
+      "payment_median_USD": 0.0,
+      "payment_p75_USD": 0.0,
+      "payment_p90_USD": 10000.0,
+      "payment_p95_USD": 20000.0,
+      "known_payment_cents": 4746668000,
+      "denominator": "Nonambiguous beneficiaries in selected domain; complete-payment subset for amount quantiles; true zero-claim people retained"
+    },
+    {
+      "scope": "All coverage",
+      "age_group": "Unknown",
+      "ledger_beneficiaries": 0,
+      "excluded_ambiguous_beneficiaries": 0,
+      "analysis_beneficiaries": 0,
+      "claimants": 0,
+      "claimant_fraction": null,
+      "accepted_claims": 0,
+      "claims_per_beneficiary": null,
+      "payment_complete_beneficiaries": 0,
+      "payment_missing_beneficiaries": 0,
+      "payment_mean_USD": null,
+      "payment_median_USD": null,
+      "payment_p75_USD": null,
+      "payment_p90_USD": null,
+      "payment_p95_USD": null,
+      "known_payment_cents": 0,
+      "denominator": "Nonambiguous beneficiaries in selected domain; complete-payment subset for amount quantiles; true zero-claim people retained"
+    },
+    {
+      "scope": "Part A 12 months",
+      "age_group": "All ages",
+      "ledger_beneficiaries": 104302,
+      "excluded_ambiguous_beneficiaries": 21,
+      "analysis_beneficiaries": 104281,
+      "claimants": 15305,
+      "claimant_fraction": 0.14676690864107556,
+      "accepted_claims": 26845,
+      "claims_per_beneficiary": 0.2574294454406843,
+      "payment_complete_beneficiaries": 104281,
+      "payment_missing_beneficiaries": 0,
+      "payment_mean_USD": 2384.1100488104257,
+      "payment_median_USD": 0.0,
+      "payment_p75_USD": 0.0,
+      "payment_p90_USD": 6000.0,
+      "payment_p95_USD": 15000.0,
+      "known_payment_cents": 24861738000,
+      "denominator": "Nonambiguous beneficiaries in selected domain; complete-payment subset for amount quantiles; true zero-claim people retained"
+    },
+    {
+      "scope": "Part A 12 months",
+      "age_group": "<65",
+      "ledger_beneficiaries": 16984,
+      "excluded_ambiguous_beneficiaries": 3,
+      "analysis_beneficiaries": 16981,
+      "claimants": 2589,
+      "claimant_fraction": 0.15246451916848242,
+      "accepted_claims": 4719,
+      "claims_per_beneficiary": 0.27789882810199634,
+      "payment_complete_beneficiaries": 16981,
+      "payment_missing_beneficiaries": 0,
+      "payment_mean_USD": 2477.119722042283,
+      "payment_median_USD": 0.0,
+      "payment_p75_USD": 0.0,
+      "payment_p90_USD": 7000.0,
+      "payment_p95_USD": 16000.0,
+      "known_payment_cents": 4206397000,
+      "denominator": "Nonambiguous beneficiaries in selected domain; complete-payment subset for amount quantiles; true zero-claim people retained"
+    },
+    {
+      "scope": "Part A 12 months",
+      "age_group": "65-74",
+      "ledger_beneficiaries": 43247,
+      "excluded_ambiguous_beneficiaries": 9,
+      "analysis_beneficiaries": 43238,
+      "claimants": 4886,
+      "claimant_fraction": 0.11300245154725011,
+      "accepted_claims": 8267,
+      "claims_per_beneficiary": 0.1911975577038716,
+      "payment_complete_beneficiaries": 43238,
+      "payment_missing_beneficiaries": 0,
+      "payment_mean_USD": 1816.5275914704657,
+      "payment_median_USD": 0.0,
+      "payment_p75_USD": 0.0,
+      "payment_p90_USD": 3000.0,
+      "payment_p95_USD": 12000.0,
+      "known_payment_cents": 7854302000,
+      "denominator": "Nonambiguous beneficiaries in selected domain; complete-payment subset for amount quantiles; true zero-claim people retained"
+    },
+    {
+      "scope": "Part A 12 months",
+      "age_group": "75-84",
+      "ledger_beneficiaries": 30404,
+      "excluded_ambiguous_beneficiaries": 5,
+      "analysis_beneficiaries": 30399,
+      "claimants": 4886,
+      "claimant_fraction": 0.1607289713477417,
+      "accepted_claims": 8543,
+      "claims_per_beneficiary": 0.2810289812164874,
+      "payment_complete_beneficiaries": 30399,
+      "payment_missing_beneficiaries": 0,
+      "payment_mean_USD": 2676.887726569953,
+      "payment_median_USD": 0.0,
+      "payment_p75_USD": 0.0,
+      "payment_p90_USD": 8000.0,
+      "payment_p95_USD": 17000.0,
+      "known_payment_cents": 8137471000,
+      "denominator": "Nonambiguous beneficiaries in selected domain; complete-payment subset for amount quantiles; true zero-claim people retained"
+    },
+    {
+      "scope": "Part A 12 months",
+      "age_group": "85+",
+      "ledger_beneficiaries": 13667,
+      "excluded_ambiguous_beneficiaries": 4,
+      "analysis_beneficiaries": 13663,
+      "claimants": 2944,
+      "claimant_fraction": 0.21547244382639244,
+      "accepted_claims": 5316,
+      "claims_per_beneficiary": 0.3890799970723853,
+      "payment_complete_beneficiaries": 13663,
+      "payment_missing_beneficiaries": 0,
+      "payment_mean_USD": 3413.282588011418,
+      "payment_median_USD": 0.0,
+      "payment_p75_USD": 0.0,
+      "payment_p90_USD": 11000.0,
+      "payment_p95_USD": 21000.0,
+      "known_payment_cents": 4663568000,
+      "denominator": "Nonambiguous beneficiaries in selected domain; complete-payment subset for amount quantiles; true zero-claim people retained"
+    },
+    {
+      "scope": "Part A 12 months",
+      "age_group": "Unknown",
+      "ledger_beneficiaries": 0,
+      "excluded_ambiguous_beneficiaries": 0,
+      "analysis_beneficiaries": 0,
+      "claimants": 0,
+      "claimant_fraction": null,
+      "accepted_claims": 0,
+      "claims_per_beneficiary": null,
+      "payment_complete_beneficiaries": 0,
+      "payment_missing_beneficiaries": 0,
+      "payment_mean_USD": null,
+      "payment_median_USD": null,
+      "payment_p75_USD": null,
+      "payment_p90_USD": null,
+      "payment_p95_USD": null,
+      "known_payment_cents": 0,
+      "denominator": "Nonambiguous beneficiaries in selected domain; complete-payment subset for amount quantiles; true zero-claim people retained"
+    }
+  ],
+  "reconciliation": [
+    {
+      "check": "annual_claim_count_from_segments",
+      "python": 27475,
+      "independent_SQL": 27475,
+      "pass": true
+    },
+    {
+      "check": "annual_known_payment_cents_from_segments",
+      "python": 25456098000,
+      "independent_SQL": 25456098000,
+      "pass": true
+    },
+    {
+      "check": "annual_known_expanded_cents_from_segments",
+      "python": 25729836000,
+      "independent_SQL": 25729836000,
+      "pass": true
+    },
+    {
+      "check": "accepted_all_year_claim_count",
+      "python": 66638,
+      "independent_SQL": 66638,
+      "pass": true
+    },
+    {
+      "check": "all_beneficiary_rows",
+      "python": 116352,
+      "independent_SQL": 116352,
+      "pass": true
+    },
+    {
+      "check": "ledger_claim_count",
+      "python": 27475,
+      "independent_SQL": 27475,
+      "pass": true
+    },
+    {
+      "check": "ledger_known_payment_cents",
+      "python": 25456098000,
+      "independent_SQL": 25456098000,
+      "pass": true
+    },
+    {
+      "check": "ledger_missing_payment_count",
+      "python": 0,
+      "independent_SQL": 0,
+      "pass": true
+    },
+    {
+      "check": "beneficiary_count_per_ID",
+      "python": 0,
+      "independent_SQL": 0,
+      "pass": true
+    },
+    {
+      "check": "beneficiary_known_cents_per_ID",
+      "python": 0,
+      "independent_SQL": 0,
+      "pass": true
+    },
+    {
+      "check": "SQLite_annual_claims",
+      "python": 27475,
+      "independent_SQL": 27475,
+      "pass": true
+    },
+    {
+      "check": "SQLite_known_cents",
+      "python": 25456098000,
+      "independent_SQL": 25456098000,
+      "pass": true
+    },
+    {
+      "check": "SQLite_claimant_IDs",
+      "python": 15740,
+      "independent_SQL": 15740,
+      "pass": true
+    },
+    {
+      "check": "claim_to_ledger_count_conservation",
+      "python": 27475,
+      "independent_SQL": 27475,
+      "pass": true
+    },
+    {
+      "check": "claim_to_ledger_known_cents_conservation",
+      "python": 25456098000,
+      "independent_SQL": 25456098000,
+      "pass": true
+    },
+    {
+      "check": "ledger_unique_beneficiary_rows",
+      "python": 116352,
+      "independent_SQL": 116352,
+      "pass": true
+    }
+  ],
+  "checks": [
+    {
+      "check": "official_input_hashes",
+      "status": "pass"
+    },
+    {
+      "check": "expected_sample_members",
+      "status": "pass"
+    },
+    {
+      "check": "required_columns",
+      "status": "pass"
+    },
+    {
+      "check": "identifiers_nonempty",
+      "status": "pass"
+    },
+    {
+      "check": "beneficiary_key_unique",
+      "status": "pass"
+    },
+    {
+      "check": "claim_segment_key_unique",
+      "status": "pass"
+    },
+    {
+      "check": "claim_ID_not_reused",
+      "status": "pass"
+    },
+    {
+      "check": "segment_categories",
+      "status": "pass"
+    },
+    {
+      "check": "strict_nonblank_date_parse",
+      "status": "pass"
+    },
+    {
+      "check": "strict_nonblank_money_parse",
+      "status": "pass"
+    },
+    {
+      "check": "coverage_integer_range",
+      "status": "pass"
+    },
+    {
+      "check": "conflicts_quarantined",
+      "status": "pass"
+    },
+    {
+      "check": "claim_row_accounting",
+      "status": "pass"
+    },
+    {
+      "check": "annual_thru_date_filter",
+      "status": "pass"
+    },
+    {
+      "check": "left_join_cardinality",
+      "status": "pass"
+    },
+    {
+      "check": "left_join_payment_conservation",
+      "status": "pass"
+    },
+    {
+      "check": "beneficiary_zero_preservation",
+      "status": "pass"
+    },
+    {
+      "check": "ambiguous_beneficiary_not_zero",
+      "status": "pass"
+    },
+    {
+      "check": "annual_ledger_unique",
+      "status": "pass"
+    }
+  ],
+  "warnings": [
+    {
+      "item": "quarantined_claims",
+      "n": 67,
+      "resolution": "Retain local conflict rows; flag affected 2008 beneficiaries; never sum conflicting payments"
+    },
+    {
+      "item": "affected_2008_beneficiaries",
+      "n": 21,
+      "resolution": "Retain full ledger rows with null complete counts/totals; exclude from main complete-analysis domain"
+    },
+    {
+      "item": "annual_missing_payment_claims",
+      "n": 0,
+      "resolution": "Retain missing and separate known sum; do not zero-fill"
+    },
+    {
+      "item": "annual_negative_payment_claims",
+      "n": 22,
+      "resolution": "Preserve negative payment; official codebook permits negative amounts"
+    },
+    {
+      "item": "claims_crossing_calendar_year",
+      "n": 224,
+      "resolution": "Assign by thru date; no proration or admission-year relabeling"
+    },
+    {
+      "item": "partial_Part_A_coverage",
+      "n": 12050,
+      "resolution": "Report all-coverage and 12-month domains separately; no full-year incidence claim"
+    },
+    {
+      "item": "source_reimbursement_mismatch_after_formula",
+      "n": 0,
+      "resolution": "Retain comparison; investigate synthesis/year definitions; not a fatal accounting equality"
+    }
+  ],
+  "payment_comparison": [
+    {
+      "definition": "claim_payment_only",
+      "paired_beneficiaries": 116331,
+      "exact_matches": 111807,
+      "difference_cents_sum": -273378000,
+      "absolute_difference_cents_sum": 273378000
+    },
+    {
+      "definition": "claim_payment_plus_covered_days_times_pass_through",
+      "paired_beneficiaries": 116331,
+      "exact_matches": 116331,
+      "difference_cents_sum": 0,
+      "absolute_difference_cents_sum": 0
+    }
+  ]
+}

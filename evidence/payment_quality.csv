@@ -1,0 +1,4 @@
+layer,rows,negative_payment,zero_payment,missing_payment
+source_segments,66773,55,2160,0
+accepted_annual_claims,27475,22,1039,0
+quarantined_claims_all_years,67,0,1,58

@@ -1,0 +1,4 @@
+layer,n,missing_from,missing_thru,from_after_thru,admission_after_discharge
+all_records,66773,68,68,0,0
+accepted_claims,66638,0,0,0,0
+quarantined_claims,67,0,0,0,0

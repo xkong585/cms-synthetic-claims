@@ -1,0 +1,10 @@
+stage,n
+source_segment_records,66773
+distinct_claims,66705
+quarantined_claims_all_years,67
+accepted_claims_all_years,66638
+accepted_claims_2008,27475
+beneficiary_ledger,116352
+eligible_beneficiaries,116331
+affected_beneficiaries,21
+true_zero_beneficiaries,100607

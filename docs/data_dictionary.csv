@@ -1,0 +1,16 @@
+source,field,type,unit,rule,missing_policy
+beneficiary,DESYNPUF_ID,string,synthetic identifier,required unique,none
+inpatient,CLM_ID,string,synthetic claim key,not reused across beneficiaries,none
+inpatient,SEGMENT,string -> integer,record segment,1 or 2; composite key unique,none
+beneficiary,BENE_BIRTH_DT,string -> date,YYYYMMDD,synthetic date; age reference 2008-12-31,blank -> missing
+beneficiary,BENE_DEATH_DT,string -> date,YYYYMMDD,synthetic date; not used to censor annual claim domain,blank -> missing
+beneficiary,BENE_SEX_IDENT_CD,string,source category,0 unknown; 1 male; 2 female,no global numeric recode
+beneficiary,BENE_HI_CVRAGE_TOT_MONS,string -> integer,Part A months,integer 0-12,missing blocks
+beneficiary,MEDREIMB_IP,string -> integer cents,synthetic USD,annual source reimbursement including pass-through,blank -> missing
+inpatient,CLM_FROM_DT,string -> date,YYYYMMDD,billing start; <= thru at claim grain,segment blanks may be coalesced after consensus
+inpatient,CLM_THRU_DT,string -> date,YYYYMMDD,annual attribution field,same
+inpatient,CLM_ADMSN_DT,string -> date,YYYYMMDD,admission <= discharge when both observed,missing flagged; conflict quarantines claim
+inpatient,NCH_BENE_DSCHRG_DT,string -> date,YYYYMMDD,discharge; not assumed payment date,same
+inpatient,CLM_PMT_AMT,string -> integer cents,synthetic USD,negative and zero retained; not segment sum,blank missing; conflicting canonical value null
+inpatient,CLM_UTLZTN_DAY_CNT,string -> integer,covered days,nonnegative; not forced equal calendar days,missing expanded reimbursement
+inpatient,CLM_PASS_THRU_PER_DIEM_AMT,string -> integer cents,synthetic USD/day,expanded amount uses covered days times this value,blank missing; conflicts quarantined

@@ -1,0 +1,13 @@
+{
+  "raw_beneficiaries": 116352,
+  "raw_segments": 66773,
+  "distinct_claims": 66705,
+  "multi_segment_claims": 68,
+  "quarantined_claims": 67,
+  "quarantined_2008": 21,
+  "accepted_claims_2008": 27475,
+  "eligible_beneficiaries": 116331,
+  "affected_beneficiaries": 21,
+  "zero_claim_beneficiaries": 100607,
+  "parse_errors": 0
+}

@@ -1,0 +1,17 @@
+check,python,independent_SQL,pass
+annual_claim_count_from_segments,27475,27475,True
+annual_known_payment_cents_from_segments,25456098000,25456098000,True
+annual_known_expanded_cents_from_segments,25729836000,25729836000,True
+accepted_all_year_claim_count,66638,66638,True
+all_beneficiary_rows,116352,116352,True
+ledger_claim_count,27475,27475,True
+ledger_known_payment_cents,25456098000,25456098000,True
+ledger_missing_payment_count,0,0,True
+beneficiary_count_per_ID,0,0,True
+beneficiary_known_cents_per_ID,0,0,True
+SQLite_annual_claims,27475,27475,True
+SQLite_known_cents,25456098000,25456098000,True
+SQLite_claimant_IDs,15740,15740,True
+claim_to_ledger_count_conservation,27475,27475,True
+claim_to_ledger_known_cents_conservation,25456098000,25456098000,True
+ledger_unique_beneficiary_rows,116352,116352,True

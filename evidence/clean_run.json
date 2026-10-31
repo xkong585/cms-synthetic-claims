@@ -1,0 +1,81 @@
+{
+  "status": "passed",
+  "mode": "empty raw/processed directories; official source downloads; full pipeline and tests",
+  "elapsed_seconds": 14.381,
+  "tables": [
+    {
+      "table": "summary_tables.csv",
+      "identical": true,
+      "sha256": "e20e108d300cb817a917b121edb8fe986eba02c702da15c284eaf21afe7ac027"
+    },
+    {
+      "table": "aggregation_reconciliation.csv",
+      "identical": true,
+      "sha256": "0ceef2c753ff24162cc8f907766dbe35ff8bea339d578efbd05df0b1c3f25710"
+    },
+    {
+      "table": "grain_audit.csv",
+      "identical": true,
+      "sha256": "3eb265274ba80938bc4c52e36490a5d40fdb316adcc9fe830d415258b5a92640"
+    },
+    {
+      "table": "year_boundary_summary.csv",
+      "identical": true,
+      "sha256": "99e872f51bf143e63fc6299b22ad5c5cab08a57b49fe76cfb23afcb23bb4431d"
+    },
+    {
+      "table": "coverage_sensitivity.csv",
+      "identical": true,
+      "sha256": "77dc42f3ebfc6b49efc9e523178c771a64e6a1a5caaba9256e1cf98bdb267633"
+    },
+    {
+      "table": "reimbursement_definition_comparison.csv",
+      "identical": true,
+      "sha256": "59b5e61bc9de080ded6f51082c03067079b5862f3f621bab2027023a626f2476"
+    },
+    {
+      "table": "cohort_flow.csv",
+      "identical": true,
+      "sha256": "d69b303baa44df230925c532d5ad3b2d492b927b6cbc71b5df64b369bb3d49dc"
+    },
+    {
+      "table": "payment_distribution.csv",
+      "identical": true,
+      "sha256": "efc981f668cf9ca01977ca36175a8d6837438c6f4b16dd32e0978f0196fe36ce"
+    }
+  ],
+  "clean_run_log": {
+    "started_at_utc": "2026-10-31T21:36:20.586561+00:00",
+    "status": "passed",
+    "steps": [
+      {
+        "stage": "download_verify",
+        "seconds": 2.456
+      },
+      {
+        "stage": "typed_staging_claim_resolution_annual_ledger",
+        "seconds": 3.423
+      },
+      {
+        "stage": "independent_SQL_and_descriptives",
+        "seconds": 0.505
+      }
+    ],
+    "elapsed_seconds": 13.996,
+    "environment": {
+      "python": "3.12.14",
+      "platform": "macOS-26.6-arm64-arm-64bit",
+      "packages": {
+        "pandas": "2.3.3",
+        "numpy": "2.2.6",
+        "pyarrow": "19.0.1",
+        "duckdb": "1.4.1",
+        "matplotlib": "3.10.7",
+        "reportlab": "4.4.4",
+        "pytest": "8.4.2"
+      }
+    },
+    "source_lock_sha256": "8ce4a809bfa7d82a480e5d12c7bcd6408f72153a3301a25ca0d8708181d017e9",
+    "scope_sha256": "df2f56d41cf7325ecbccb360ecea0276848925045df48c3b52fd03422cba4697"
+  }
+}
